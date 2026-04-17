@@ -1,0 +1,136 @@
+/* ── Reset & Fonts ──────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --font-body: 'Lora', Georgia, serif;
+  --font-ui:   'DM Sans', system-ui, sans-serif;
+  --bg:        #faf9f7;
+  --fg:        #1a1916;
+  --muted:     #7a7870;
+  --accent:    #2b5dab;
+  --border:    #e4e2dd;
+  --max-w:     680px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg); color: var(--fg);
+  font-size: 1.0625rem; line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ──────────────────────────────────── */
+header { border-bottom: 1px solid var(--border); }
+nav {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.25rem 1.5rem;
+}
+.site-title {
+  font-family: var(--font-ui); font-weight: 500;
+  font-size: 1.05rem; color: var(--fg); text-decoration: none;
+}
+.nav-links { display: flex; gap: 1.5rem; }
+.nav-links a {
+  font-family: var(--font-ui); font-size: 0.9rem;
+  color: var(--muted); text-decoration: none;
+}
+.nav-links a:hover { color: var(--fg); }
+
+/* ── Main ─────────────────────────────────── */
+main { max-width: var(--max-w); margin: 0 auto; padding: 3rem 1.5rem; }
+
+/* ── Hero ─────────────────────────────────── */
+.hero { margin-bottom: 3rem; }
+.hero h1 {
+  font-family: var(--font-ui); font-size: 2.25rem;
+  font-weight: 500; letter-spacing: -0.02em;
+}
+.subtitle { color: var(--muted); margin-top: 0.5rem; }
+
+/* ── Post List ────────────────────────────── */
+.post-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.post-card a {
+  display: block; padding: 1.75rem 0;
+  border-top: 1px solid var(--border);
+  text-decoration: none; color: inherit;
+}
+.post-card:last-child a { border-bottom: 1px solid var(--border); }
+.post-date {
+  font-family: var(--font-ui); font-size: 0.8rem;
+  color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase;
+}
+.post-title {
+  font-family: var(--font-ui); font-size: 1.25rem;
+  font-weight: 500; margin: 0.35rem 0 0.5rem;
+  transition: color 0.15s;
+}
+.post-card a:hover .post-title { color: var(--accent); }
+.post-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.read-more {
+  display: inline-block; margin-top: 0.75rem;
+  font-family: var(--font-ui); font-size: 0.85rem;
+  color: var(--accent);
+}
+
+/* ── Post Page ────────────────────────────── */
+.post-header { margin-bottom: 2.5rem; }
+.back-link {
+  display: inline-block; margin-bottom: 1.5rem;
+  font-family: var(--font-ui); font-size: 0.85rem;
+  color: var(--muted); text-decoration: none;
+}
+.back-link:hover { color: var(--fg); }
+.post-header time {
+  font-family: var(--font-ui); font-size: 0.8rem;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+}
+.post-header h1 {
+  font-size: 2.1rem; font-weight: 600;
+  line-height: 1.25; margin: 0.5rem 0 1rem;
+}
+.lead {
+  font-size: 1.1rem; color: var(--muted);
+  border-left: 2px solid var(--border); padding-left: 1rem;
+}
+
+/* ── Prose (article content) ──────────────── */
+.prose { border-top: 1px solid var(--border); padding-top: 2rem; }
+.prose h2 {
+  font-family: var(--font-ui); font-size: 1.3rem; font-weight: 500;
+  margin: 2.25rem 0 0.75rem; letter-spacing: -0.01em;
+}
+.prose h3 {
+  font-family: var(--font-ui); font-size: 1.1rem; font-weight: 500;
+  margin: 1.75rem 0 0.5rem;
+}
+.prose p  { margin-bottom: 1.25rem; }
+.prose a  { color: var(--accent); text-underline-offset: 3px; }
+.prose ul, .prose ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose blockquote {
+  border-left: 3px solid var(--border); margin: 1.75rem 0;
+  padding: 0.25rem 1.25rem; color: var(--muted); font-style: italic;
+}
+.prose code {
+  font-family: 'ui-monospace', 'SF Mono', monospace;
+  background: #f0ede8; border-radius: 4px;
+  padding: 0.15em 0.4em; font-size: 0.875em;
+}
+.prose pre {
+  background: #1e1c1a; color: #e8e6e1;
+  border-radius: 8px; padding: 1.25rem;
+  overflow-x: auto; margin: 1.5rem 0;
+}
+.prose pre code { background: none; padding: 0; font-size: 0.875rem; }
+.prose img { max-width: 100%; border-radius: 8px; margin: 1.5rem 0; }
+.prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+/* ── Footer ────────────────────────────────── */
+footer {
+  border-top: 1px solid var(--border); margin-top: 4rem;
+  padding: 2rem 1.5rem; text-align: center;
+  font-family: var(--font-ui); font-size: 0.85rem; color: var(--muted);
+}

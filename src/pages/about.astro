@@ -1,17 +1,31 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>About</h1>
-	</body>
-</html>
+<BaseLayout title="About Me" description="A bit about who I am and what I do.">
+  <article class="prose">
+    <h1>About Me</h1>
+    
+    <p>
+      Hi! I'm a student passionate about technology, mathematics, and science. 
+      I enjoy building tools, exploring complex problems, and sharing my thoughts 
+      on the things I learn along the way.
+    </p>
+
+    <h2>What I do</h2>
+    <ul>
+      <li><strong>Development:</strong> Building software with C++, Python, and Astro.</li>
+      <li><strong>Research:</strong> Exploring graph theory, game theory, and assistive technology.</li>
+      <li><strong>Music:</strong> Playing violin and piano.</li>
+      <li><strong>Bridge:</strong> Passionate about strategy and developing tools for players.</li>
+    </ul>
+
+    <h2>Philosophy</h2>
+    <p>
+      I have a deep interest in existentialist thought—finding meaning in the 
+      absurdity of the world through action, creation, and continuous learning.
+    </p>
+
+    <a href="/">← Back to Blog</a>
+  </article>
+</BaseLayout>
